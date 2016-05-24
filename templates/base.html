@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}小神邹-Note{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+         <span class="sr-only">Toggle navagation</span>
+	 <span class="icon-bar"></span>
+	 <span class="icon-bar"></span>
+	 <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="/">小神邹</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url_for('notes') }}">Notes</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+  {% block page_content %}
+  {% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+  <p style="text-align:center;">小神邹 & 2016/5/24 倾情打造</p>
+</div>
+{% endblock %}
